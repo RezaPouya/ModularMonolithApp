@@ -1,0 +1,9 @@
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains.Services\bin\Debug\netstandard2.1\Account.Domains.Services.deps.json
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains.Services\bin\Debug\netstandard2.1\Account.Domains.Services.dll
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains.Services\bin\Debug\netstandard2.1\Account.Domains.Services.pdb
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains.Services\obj\Debug\netstandard2.1\Account.Domains.Services.csprojAssemblyReference.cache
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains.Services\obj\Debug\netstandard2.1\Account.Domains.Services.AssemblyInfoInputs.cache
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains.Services\obj\Debug\netstandard2.1\Account.Domains.Services.AssemblyInfo.cs
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains.Services\obj\Debug\netstandard2.1\Account.Domains.Services.csproj.CoreCompileInputs.cache
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains.Services\obj\Debug\netstandard2.1\Account.Domains.Services.dll
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains.Services\obj\Debug\netstandard2.1\Account.Domains.Services.pdb

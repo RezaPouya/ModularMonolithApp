@@ -1,0 +1,15 @@
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\obj\Debug\net5.0\Account.Domains.csprojAssemblyReference.cache
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\obj\Debug\net5.0\Account.Domains.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\obj\Debug\net5.0\Account.Domains.AssemblyInfoInputs.cache
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\obj\Debug\net5.0\Account.Domains.AssemblyInfo.cs
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\obj\Debug\net5.0\Account.Domains.csproj.CoreCompileInputs.cache
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\bin\Debug\net5.0\Account.Domains.deps.json
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\bin\Debug\net5.0\Account.Domains.dll
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\bin\Debug\net5.0\ref\Account.Domains.dll
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\bin\Debug\net5.0\Account.Domains.pdb
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\bin\Debug\net5.0\Framework.Core.dll
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\bin\Debug\net5.0\Framework.Core.pdb
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\obj\Debug\net5.0\Account.Domains.csproj.CopyComplete
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\obj\Debug\net5.0\Account.Domains.dll
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\obj\Debug\net5.0\ref\Account.Domains.dll
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.Domains\obj\Debug\net5.0\Account.Domains.pdb

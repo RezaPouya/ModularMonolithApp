@@ -1,0 +1,11 @@
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.App.Infrastructure\bin\Debug\net5.0\Account.App.Infrastructure.deps.json
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.App.Infrastructure\bin\Debug\net5.0\Account.App.Infrastructure.dll
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.App.Infrastructure\bin\Debug\net5.0\ref\Account.App.Infrastructure.dll
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.App.Infrastructure\bin\Debug\net5.0\Account.App.Infrastructure.pdb
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.App.Infrastructure\obj\Debug\net5.0\Account.App.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.App.Infrastructure\obj\Debug\net5.0\Account.App.Infrastructure.AssemblyInfoInputs.cache
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.App.Infrastructure\obj\Debug\net5.0\Account.App.Infrastructure.AssemblyInfo.cs
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.App.Infrastructure\obj\Debug\net5.0\Account.App.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.App.Infrastructure\obj\Debug\net5.0\Account.App.Infrastructure.dll
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.App.Infrastructure\obj\Debug\net5.0\ref\Account.App.Infrastructure.dll
+C:\Projects\ModularMonolithApp\2_bounded_contexts\account_bounded_context\Account.App.Infrastructure\obj\Debug\net5.0\Account.App.Infrastructure.pdb
