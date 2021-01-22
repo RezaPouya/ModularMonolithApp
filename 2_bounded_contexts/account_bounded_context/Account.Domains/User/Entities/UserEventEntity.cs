@@ -2,8 +2,7 @@
 
 namespace Account.Domains.User.Entities
 {
-    public class UserEventEntity : DomainEventEntity<string>
+    public class UserEventEntity : DomainEventEntity
     {
-        public UserEntity User { get; set; }
     }
 }

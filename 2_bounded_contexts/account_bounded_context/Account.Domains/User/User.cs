@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Account.Domains.User
 {
-    public partial class UserDomain : AggregateRoot<string>
+    public partial class UserDomain : AggregateRoot
     {
         public UserDomain(string idenity,
             string userName,
@@ -59,7 +59,7 @@ namespace Account.Domains.User
 
         public override async Task<bool> SaveChangeAsync()
         {
-                    
+            throw new NotFiniteNumberException();
         }
 
         #endregion behaviour

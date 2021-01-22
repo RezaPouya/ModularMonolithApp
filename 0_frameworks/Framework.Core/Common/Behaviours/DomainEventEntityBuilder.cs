@@ -1,5 +1,4 @@
-﻿using Framework.Core.Common.Contracts;
-using Framework.Core.Common.Models;
+﻿using Framework.Core.Common.Models;
 using System;
 
 namespace Framework.Core.Common.Behaviours
@@ -8,41 +7,20 @@ namespace Framework.Core.Common.Behaviours
     {
         private string _aggregateId;
         private string _creatorUser;
-        private IDomainEvent _data;
-        private bool _deleted;
+        private string _data;
         private bool _deleteEvent;
         private long _id;
         private string _ip;
         private bool _isSnapShotEvent;
-        private short _lastSnapShot;
-        private DateTimeOffset _occurredAt;
-        private DateTimeOffset _publishDateTime;
-        private bool _published;
-        private bool _subscribedEvent;
-        private bool _systemEvent;
-        private string _type;
-        private int _typeId;
-        private short _version;
+        private ushort _lastSnapShot;
 
         public DomainEventEntity Build()
         {
-            var model = new DomainEventEntity();
-            model.Set_Id(_id);
-            model.Set_AggregateId(_aggregateId);
-            model.Set_Type(_typeId, _type);
-            model.Set_Creator(_creatorUser, _ip);
+            var model = new DomainEventEntity(_aggregateId, _id, _lastSnapShot);
+
             model.Set_EventData(_data);
-            model.Set_DeleteEvent(_deleteEvent);
-            model.Set_Deleted(_deleted);
-            model.Set_OccurredAt(_occurredAt);
-            model.Set_SnapShot(_lastSnapShot);
-            model.Set_Version(_version);
-            model.Set_SnapShotEvent(_isSnapShotEvent);
-            model.Set_Deleted(_deleted);
-            model.Set_Published(_published);
-            model.Set_SystemEvent(_systemEvent);
-            model.Set_PublishDateTime(_publishDateTime);
-            model.Set_SubscribedEvent(_subscribedEvent);
+
+            model.Set_IsSnapShot(_isSnapShotEvent);
             return model;
         }
 
@@ -71,10 +49,9 @@ namespace Framework.Core.Common.Behaviours
             return this;
         }
 
-        public DomainEventEntityBuilder EventData(IDomainEvent @event)
+        public DomainEventEntityBuilder EventData(string @event)
         {
             this._data = @event;
-            // JsonSerializer.Deserialize<MyType>("{"Message":"Hello Again."}")
             return this;
         }
 
@@ -85,15 +62,9 @@ namespace Framework.Core.Common.Behaviours
             return this;
         }
 
-        public DomainEventEntityBuilder SnapShot(short snapShot)
+        public DomainEventEntityBuilder SnapShot(ushort snapShot)
         {
             this._lastSnapShot = snapShot;
-            return this;
-        }
-
-        public DomainEventEntityBuilder Deleted(bool deleted)
-        {
-            this._deleted = deleted;
             return this;
         }
 
@@ -112,18 +83,6 @@ namespace Framework.Core.Common.Behaviours
         public DomainEventEntityBuilder SystemEvent(bool isSystemEvent)
         {
             this._systemEvent = isSystemEvent;
-            return this;
-        }
-
-        public DomainEventEntityBuilder Published(bool published)
-        {
-            this._published = published;
-            return this;
-        }
-
-        public DomainEventEntityBuilder PublishDateTime(DateTimeOffset publishDateTime)
-        {
-            this._publishDateTime = publishDateTime;
             return this;
         }
 

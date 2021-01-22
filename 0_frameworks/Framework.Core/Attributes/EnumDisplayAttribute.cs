@@ -3,9 +3,9 @@
 namespace Framework.Core.Attributes
 {
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
-    public sealed class CustomDisplayAttribute : Attribute
+    public sealed class EnumDisplayAttribute : Attribute
     {
-        public CustomDisplayAttribute(string name, string nameEn, short displayOrder)
+        public EnumDisplayAttribute(string name, string nameEn, short displayOrder)
         {
             Title = name;
             TitleEn = nameEn;

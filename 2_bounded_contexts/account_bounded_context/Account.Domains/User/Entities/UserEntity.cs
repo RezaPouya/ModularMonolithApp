@@ -3,7 +3,7 @@ using Framework.Core.Common.Models;
 
 namespace Account.Domains.User.Entities
 {
-    public sealed class UserEntity : AuditableDbEntity<string, UserEventEntity>, IEntity
+    public sealed class UserEntity : AuditableDbEntity, IEntity
     {
         public UserEntity() : base()
         {
@@ -16,6 +16,5 @@ namespace Account.Domains.User.Entities
         public bool CellphoneConfirmed { get; set; }
         public bool EmailConfirmed { get; set; }
         public int EventCount { get; set; }
-        public short SnapShotCount { get; set; }
     }
 }

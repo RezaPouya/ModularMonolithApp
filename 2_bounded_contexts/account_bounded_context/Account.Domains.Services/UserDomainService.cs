@@ -16,9 +16,10 @@ namespace Account.Domains.Services
             _repository = repository;
         }
 
-        public async Task<UserDomain> GetUser(string userId, CancellationToken cancellationToken, bool takeFromLastSnapshot)
+        public async Task<User.UserDomain> GetUser(string userId, CancellationToken cancellationToken, bool takeFromLastSnapshot)
         {
-            var record = _
+            var @events = await _repository.GetAllLastSnapShotEvents(userId, cancellationToken).ConfigureAwait(false);
+            var record = new UserDomain(@events);
         }
     }
 }

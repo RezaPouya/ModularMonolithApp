@@ -5,16 +5,17 @@ using System.Threading.Tasks;
 
 namespace Framework.Core.Common.Models
 {
-    public abstract class AggregateRoot<T> where T : class
+    public abstract class AggregateRoot
     {
-        public AggregateRoot(T identity)
+        public AggregateRoot(string identity)
         {
             _eventQueue = new List<IDomainEvent>();
             this.Identity = identity;
         }
 
-        protected List<IDomainEvent> _eventQueue { get; set; }
-        public T Identity { get; protected set; }
+        public List<IDomainEvent> _eventQueue { get; set; }
+        public string Identity { get; protected set; }
+        public ushort SnapShotCounter { get; protected set; }
 
         public void Apply(IDomainEvent @event)
         {

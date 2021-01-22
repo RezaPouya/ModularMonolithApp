@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Framework.Core.AttributesExtensions
 {
-    public static class CustomDisplayAttributeExtension
+    public static class EnumDisplayAttributeExtension
     {
         public static string GetDisplayNameFa(this Enum @enum)
         {
@@ -13,13 +13,13 @@ namespace Framework.Core.AttributesExtensions
 
             if (memInfo != null && memInfo.Length > 0)
             {
-                var attr = memInfo[0].GetCustomAttribute(typeof(CustomDisplayAttribute), false);
+                var attr = memInfo[0].GetCustomAttribute(typeof(EnumDisplayAttribute), false);
 
                 if (attr is null)
                     throw new NullReferenceException($"The custome attribute is not set for '{@enum}'");
 
-                if (attr is CustomDisplayAttribute)
-                    return ((CustomDisplayAttribute)attr)?.Title ?? "";
+                if (attr is EnumDisplayAttribute)
+                    return ((EnumDisplayAttribute)attr)?.Title ?? "";
             }
 
             return @enum.ToString();
@@ -31,13 +31,13 @@ namespace Framework.Core.AttributesExtensions
 
             if (memInfo != null && memInfo.Length > 0)
             {
-                var attr = memInfo[0].GetCustomAttribute(typeof(CustomDisplayAttribute), false);
+                var attr = memInfo[0].GetCustomAttribute(typeof(EnumDisplayAttribute), false);
 
                 if (attr is null)
                     throw new NullReferenceException($"The custome attribute is not set for '{@enum}'");
 
-                if (attr is CustomDisplayAttribute)
-                    return ((CustomDisplayAttribute)attr)?.TitleEn ?? "";
+                if (attr is EnumDisplayAttribute)
+                    return ((EnumDisplayAttribute)attr)?.TitleEn ?? "";
             }
 
             return @enum.ToString();
