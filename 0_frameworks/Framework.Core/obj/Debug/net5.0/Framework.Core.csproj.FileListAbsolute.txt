@@ -9,4 +9,3 @@ C:\Projects\ModularMonolithApp\0_frameworks\Framework.Core\obj\Debug\net5.0\Fram
 C:\Projects\ModularMonolithApp\0_frameworks\Framework.Core\obj\Debug\net5.0\Framework.Core.dll
 C:\Projects\ModularMonolithApp\0_frameworks\Framework.Core\obj\Debug\net5.0\ref\Framework.Core.dll
 C:\Projects\ModularMonolithApp\0_frameworks\Framework.Core\obj\Debug\net5.0\Framework.Core.pdb
-C:\Projects\ModularMonolithApp\0_frameworks\Framework.Core\obj\Debug\net5.0\Framework.Core.csprojAssemblyReference.cache

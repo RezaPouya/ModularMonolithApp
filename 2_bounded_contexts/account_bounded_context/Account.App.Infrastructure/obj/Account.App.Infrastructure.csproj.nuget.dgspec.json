@@ -4,14 +4,14 @@
     "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.App.Infrastructure\\Account.App.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.App.Infrastructure\\Account.App.Infrastructure.csproj": {
+    "C:\\Projects\\ModularMonolithApp\\0_frameworks\\Framework.Core\\Framework.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.App.Infrastructure\\Account.App.Infrastructure.csproj",
-        "projectName": "Account.App.Infrastructure",
-        "projectPath": "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.App.Infrastructure\\Account.App.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Projects\\ModularMonolithApp\\0_frameworks\\Framework.Core\\Framework.Core.csproj",
+        "projectName": "Framework.Core",
+        "projectPath": "C:\\Projects\\ModularMonolithApp\\0_frameworks\\Framework.Core\\Framework.Core.csproj",
         "packagesPath": "C:\\Users\\R.Pouya\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.App.Infrastructure\\obj\\",
+        "outputPath": "C:\\Projects\\ModularMonolithApp\\0_frameworks\\Framework.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\R.Pouya\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,142 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.App.Infrastructure\\Account.App.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.App.Infrastructure\\Account.App.Infrastructure.csproj",
+        "projectName": "Account.App.Infrastructure",
+        "projectPath": "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.App.Infrastructure\\Account.App.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\R.Pouya\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.App.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\R.Pouya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\JobVisionNuget": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.Domains\\Account.Domains.csproj": {
+                "projectPath": "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.Domains\\Account.Domains.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.Domains\\Account.Domains.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.Domains\\Account.Domains.csproj",
+        "projectName": "Account.Domains",
+        "projectPath": "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.Domains\\Account.Domains.csproj",
+        "packagesPath": "C:\\Users\\R.Pouya\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.Domains\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\R.Pouya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\JobVisionNuget": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Projects\\ModularMonolithApp\\0_frameworks\\Framework.Core\\Framework.Core.csproj": {
+                "projectPath": "C:\\Projects\\ModularMonolithApp\\0_frameworks\\Framework.Core\\Framework.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

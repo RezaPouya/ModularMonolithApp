@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Account.Domains.Common
+namespace Account.Domains.Commons
 {
     public static class AggregatesConstatnts
     {

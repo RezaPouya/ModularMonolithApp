@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace Account.Domains.Common.ValidationsMessages
+namespace Framework.Core.Common.Models
 {
     public sealed class ValidationModel
     {

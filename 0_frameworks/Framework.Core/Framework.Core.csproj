@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DbEntity\" />
+    <Folder Include="Common\Abstracts\" />
+    <Folder Include="Common\ValidationsMessages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.2" />
   </ItemGroup>
 
 </Project>

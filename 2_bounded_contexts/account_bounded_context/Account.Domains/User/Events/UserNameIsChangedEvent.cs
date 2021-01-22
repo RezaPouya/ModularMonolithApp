@@ -1,23 +1,21 @@
-﻿using Account.Domains.Common.Contracts;
+﻿using Framework.Core.Common.Models;
 using System;
 
 namespace Account.Domains.User.Events
 {
-    public record UserUnameIsSetEvent : DomainEvent
+    public record UserNameIsChangedEvent : DomainEvent
     {
-        public UserUnameIsSetEvent(
+        public UserNameIsChangedEvent(
             string aggregateId,
             DateTimeOffset lastUpdate,
-            string userName,
-            string passwordHash) : base(aggregateId)
+            string userName) : base(aggregateId)
         {
             UserName = userName;
-            PasswordHash = passwordHash;
             LastUpdate = lastUpdate;
         }
 
         public string UserName { get; private set; }
-        public string PasswordHash { get; private set; }
+
         public DateTimeOffset LastUpdate { get; private set; }
     }
 }

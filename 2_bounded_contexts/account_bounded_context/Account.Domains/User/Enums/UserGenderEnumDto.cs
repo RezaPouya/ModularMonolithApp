@@ -1,4 +1,5 @@
-﻿using Framework.Core.BaseModels;
+﻿using Framework.Core.AttributesExtensions;
+using Framework.Core.BaseModels;
 using Framework.Core.Exceptions;
 using Framework.Core.Extensions;
 using System;

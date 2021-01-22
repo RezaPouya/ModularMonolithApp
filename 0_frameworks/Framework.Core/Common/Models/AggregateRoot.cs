@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Framework.Core.Common.Contracts;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
-namespace Account.Domains.Common.Contracts
+namespace Framework.Core.Common.Models
 {
     public abstract class AggregateRoot<T> where T : class
     {
@@ -13,8 +15,6 @@ namespace Account.Domains.Common.Contracts
 
         protected List<IDomainEvent> _eventQueue { get; set; }
         public T Identity { get; protected set; }
-
-        public abstract T GenerateIdentity();
 
         public void Apply(IDomainEvent @event)
         {
@@ -38,5 +38,7 @@ namespace Account.Domains.Common.Contracts
         }
 
         public abstract bool SaveChange();
+
+        public abstract Task<bool> SaveChangeAsync();
     }
 }

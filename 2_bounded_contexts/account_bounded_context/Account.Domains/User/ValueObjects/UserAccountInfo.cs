@@ -1,6 +1,8 @@
-﻿using Account.Domains.Common.Contracts;
-using Account.Domains.Common.ValidationsMessages;
+﻿
 using Account.Domains.User.Exceptions;
+using Framework.Core.Common.Contracts;
+using Framework.Core.Common.Models;
+using Framework.Core.Helpers;
 using System;
 
 namespace Account.Domains.User.ValueObjects
@@ -49,7 +51,7 @@ namespace Account.Domains.User.ValueObjects
             if (validation.IsValid == false)
                 throw new UserValidationException(validation.GetValidationErrorMessages());
 
-            var generatedPasswordHash = _generatePasswordHash(password);
+            var generatedPasswordHash = GeneratePasswordHash(password);
 
             if (this.PasswordHash.Equals(generatedPasswordHash))
                 validation.AddValidationError("کلمه ی عبور فعلی با کلمه ی عبور قبلی شما برابر است");
@@ -57,9 +59,9 @@ namespace Account.Domains.User.ValueObjects
             return validation;
         }
 
-        private string _generatePasswordHash(string password)
+        public static string GeneratePasswordHash(string password)
         {
-            return password;
+            return SecurityHelper.GetSha256Hash(password);
         }
     }
 }

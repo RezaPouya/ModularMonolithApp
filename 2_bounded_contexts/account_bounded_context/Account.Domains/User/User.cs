@@ -1,40 +1,50 @@
-﻿using Account.Domains.Common;
-using Account.Domains.Common.Behaviours;
-using Account.Domains.Common.Contracts;
-using Account.Domains.User.Events;
+﻿using Account.Domains.User.Events;
 using Account.Domains.User.Exceptions;
 using Account.Domains.User.ValueObjects;
+using Framework.Core.Common.Models;
+using Framework.Core.Extensions;
+using Framework.Core.Helpers;
 using System;
+using System.Threading.Tasks;
 
 namespace Account.Domains.User
 {
-    public partial class User : AggregateRoot<string>
+    public partial class UserDomain : AggregateRoot<string>
     {
-        public User(string idenity) : base(idenity)
+        public UserDomain(string idenity,
+            string userName,
+            string password,
+            string email) : base(idenity)
         {
+            idenity.IsNotNotOrEmpty<UserValidationException>(errorMessage: "Please supply id");
+            UserAccountInfo.IsPasswordValid(userName).Validate<UserAccountValidationException>();
+            UserAccountInfo.IsPasswordValid(password).Validate<UserAccountValidationException>();
+            UserEmail.IsEmailValid(email.NormalizeEmail()).Validate<UserAccountValidationException>();
+
+            var @event = new UserCreatedEvent(idenity,
+                userName,
+                UserAccountInfo.GeneratePasswordHash(password),
+                email.NormalizeEmail(),
+                DateTimeOffset.UtcNow);
+
+            Apply(@event);
         }
-
-        private const string _aggregateName = AggregatesConstatnts.User;
-
-        public override string GenerateIdentity() => $"{_aggregateName}-{DateTimeOffset.Now.Ticks}-{Guid.NewGuid().ToString("x")}";
 
         public UserAccountInfo AccountInfo { get; set; }
         public UserPersonalInfo PersonalInfo { get; private set; }
         public UserEmail Email { get; private set; }
-        public UserCellphone Cellphone { get; private set; }
 
         #region behaviour
 
-        public bool SetUserNameAndPassword(string userName, string password)
+        public bool ChangeUserName(string userName)
         {
             UserAccountInfo.IsUserNameValid(userName).Validate<UserAccountValidationException>();
-            UserAccountInfo.IsPasswordValid(password).Validate<UserAccountValidationException>();
+            //UserAccountInfo.IsPasswordValid(password).Validate<UserAccountValidationException>();
 
             // create event
-            var @event = new UserUnameIsSetEvent(this.Identity,
+            var @event = new UserNameIsChangedEvent(this.Identity,
                 DateTimeOffset.UtcNow,
-                userName,
-                password);
+                userName);
 
             // raise event
             Apply(@event);
@@ -45,6 +55,11 @@ namespace Account.Domains.User
         public override bool SaveChange()
         {
             throw new NotImplementedException();
+        }
+
+        public override async Task<bool> SaveChangeAsync()
+        {
+                    
         }
 
         #endregion behaviour

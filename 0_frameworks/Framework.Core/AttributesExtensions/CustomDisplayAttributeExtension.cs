@@ -3,7 +3,7 @@ using Framework.Core.Helpers;
 using System;
 using System.Reflection;
 
-namespace Framework.Core.Extensions
+namespace Framework.Core.AttributesExtensions
 {
     public static class CustomDisplayAttributeExtension
     {

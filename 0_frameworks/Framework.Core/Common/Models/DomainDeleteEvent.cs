@@ -1,4 +1,4 @@
-﻿namespace Account.Domains.Common.Contracts
+﻿namespace Framework.Core.Common.Models
 {
     public abstract record DomainDeleteEvent : DomainEvent
     {

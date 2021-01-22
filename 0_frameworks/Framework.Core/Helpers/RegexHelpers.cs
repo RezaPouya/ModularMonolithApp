@@ -4,15 +4,18 @@ using System.Text.RegularExpressions;
 
 namespace Framework.Core.Helpers
 {
-    public static class RegexUtilities
+    public static class RegexHelpers
     {
-        public static bool IsValidEmail(this string email)
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public static string NormalizeEmail(this string email)
         {
-            if (string.IsNullOrWhiteSpace(email))
-                return false;
-
             try
             {
+                email = email.ToLower().Trim();
                 // Normalize the domain
                 email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
                                       RegexOptions.None, TimeSpan.FromMilliseconds(200));
@@ -29,17 +32,26 @@ namespace Framework.Core.Helpers
                     return match.Groups[1].Value + domainName;
                 }
             }
-            catch (RegexMatchTimeoutException)
+            catch (Exception)
             {
-                return false;
+                throw;
             }
-            catch (ArgumentException)
-            {
+
+            return email;
+        }
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format
+        /// </summary>
+        public static bool IsValidEmail(this string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
                 return false;
-            }
 
             try
             {
+                email = email.NormalizeEmail();
+
                 return Regex.IsMatch(email,
                     @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
                     RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));

@@ -1,4 +1,4 @@
-﻿namespace Account.Domains.Common.Contracts
+﻿namespace Framework.Core.Common.Contracts
 {
     public interface IDomainDeleteEvent : IDomainEvent
     {
