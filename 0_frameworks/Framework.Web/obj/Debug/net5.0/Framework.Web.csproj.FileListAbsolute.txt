@@ -3,3 +3,13 @@ C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\obj\Debug\net5.0\Frame
 C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\obj\Debug\net5.0\Framework.Web.AssemblyInfoInputs.cache
 C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\obj\Debug\net5.0\Framework.Web.AssemblyInfo.cs
 C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\obj\Debug\net5.0\Framework.Web.csproj.CoreCompileInputs.cache
+C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\bin\Debug\net5.0\Framework.Web.deps.json
+C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\bin\Debug\net5.0\Framework.Web.dll
+C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\bin\Debug\net5.0\ref\Framework.Web.dll
+C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\bin\Debug\net5.0\Framework.Web.pdb
+C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\bin\Debug\net5.0\Framework.Core.dll
+C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\bin\Debug\net5.0\Framework.Core.pdb
+C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\obj\Debug\net5.0\Framework.Web.csproj.CopyComplete
+C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\obj\Debug\net5.0\Framework.Web.dll
+C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\obj\Debug\net5.0\ref\Framework.Web.dll
+C:\Projects\ModularMonolithApp\0_frameworks\Framework.Web\obj\Debug\net5.0\Framework.Web.pdb

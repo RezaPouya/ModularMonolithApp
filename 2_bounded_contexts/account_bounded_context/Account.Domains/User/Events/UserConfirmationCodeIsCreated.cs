@@ -3,7 +3,7 @@ using System;
 
 namespace Account.Domains.User.Events
 {
-    public sealed record UserConfirmationCodeIsCreated : DomainEvent
+    public class UserConfirmationCodeIsCreated : DomainEvent
     {
         public UserConfirmationCodeIsCreated(string aggregateRootId,
             string code,

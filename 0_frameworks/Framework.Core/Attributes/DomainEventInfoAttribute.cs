@@ -5,14 +5,17 @@ namespace Framework.Core.Attributes
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
     public class DomainEventInfoAttribute : Attribute
     {
-        public DomainEventInfoAttribute(string uniqueTypeId, string name ,
+        public DomainEventInfoAttribute(string uniqueTypeId,
+            string aggregate , 
+            string name ,
             ushort version = 1,
             bool isDeleteEvent = false,
             bool isSystemGenerated = false,
             bool isSnapShotEvent = false)
         {
             UniqueTypeId = uniqueTypeId;
-            Name = name; 
+            Name = name;
+            Aggregate = aggregate;
             Version = version;
             DeleteEvent = isDeleteEvent;
             SnapShot = isSnapShotEvent;
@@ -20,6 +23,7 @@ namespace Framework.Core.Attributes
         }
 
         public string Name { get; }
+        public string Aggregate { get; }
         public string UniqueTypeId { get; }
         public ushort Version { get; }
         public bool SystemGenerated { get; }

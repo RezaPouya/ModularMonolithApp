@@ -3,7 +3,7 @@ using System;
 
 namespace Account.Domains.User.Events
 {
-    public record UserNameIsChangedEvent : DomainEvent
+    public class UserNameIsChangedEvent : DomainEvent
     {
         public UserNameIsChangedEvent(
             string aggregateId,

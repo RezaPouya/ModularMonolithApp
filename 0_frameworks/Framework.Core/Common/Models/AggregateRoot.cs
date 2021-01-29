@@ -17,6 +17,13 @@ namespace Framework.Core.Common.Models
         public string Identity { get; protected set; }
         public ushort SnapShotCounter { get; protected set; }
 
+        public void SetSnapShotCounter(ushort snapShotCounter)
+        {
+            this.SnapShotCounter = snapShotCounter;
+        }
+
+        public void IncreaseSnapShotCounter() => this.SnapShotCounter++;
+
         public void Apply(IDomainEvent @event)
         {
             _record(@event);
@@ -41,5 +48,6 @@ namespace Framework.Core.Common.Models
         public abstract bool SaveChange();
 
         public abstract Task<bool> SaveChangeAsync();
+
     }
 }

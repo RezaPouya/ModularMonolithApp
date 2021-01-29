@@ -1,26 +1,20 @@
 ﻿using Framework.Core.Common.Models;
-using System;
 
 namespace Framework.Core.Common.Behaviours
 {
     public sealed class DomainEventEntityBuilder
     {
         private string _aggregateId;
-        private string _creatorUser;
         private string _data;
-        private bool _deleteEvent;
         private long _id;
+        private bool _deleteEvent;
+        private string _creatorUser;
         private string _ip;
-        private bool _isSnapShotEvent;
-        private ushort _lastSnapShot;
 
         public DomainEventEntity Build()
         {
-            var model = new DomainEventEntity(_aggregateId, _id, _lastSnapShot);
-
+            var model = new DomainEventEntity(_aggregateId, _id);
             model.Set_EventData(_data);
-
-            model.Set_IsSnapShot(_isSnapShotEvent);
             return model;
         }
 
@@ -33,12 +27,6 @@ namespace Framework.Core.Common.Behaviours
         public DomainEventEntityBuilder AggregateId(string aggregateId)
         {
             this._aggregateId = aggregateId;
-            return this;
-        }
-
-        public DomainEventEntityBuilder OccurredAt(DateTimeOffset occurredAt)
-        {
-            this._occurredAt = occurredAt;
             return this;
         }
 
@@ -55,46 +43,9 @@ namespace Framework.Core.Common.Behaviours
             return this;
         }
 
-        public DomainEventEntityBuilder Type(int typeId, string type)
-        {
-            this._typeId = typeId;
-            this._type = type;
-            return this;
-        }
-
-        public DomainEventEntityBuilder SnapShot(ushort snapShot)
-        {
-            this._lastSnapShot = snapShot;
-            return this;
-        }
-
         public DomainEventEntityBuilder DeleteEvent(bool deletedEvent)
         {
             this._deleteEvent = deletedEvent;
-            return this;
-        }
-
-        public DomainEventEntityBuilder SubscribedEvent(bool subscribed)
-        {
-            this._subscribedEvent = subscribed;
-            return this;
-        }
-
-        public DomainEventEntityBuilder SystemEvent(bool isSystemEvent)
-        {
-            this._systemEvent = isSystemEvent;
-            return this;
-        }
-
-        public DomainEventEntityBuilder SnapShotEvent(bool snapShotEvent)
-        {
-            this._isSnapShotEvent = snapShotEvent;
-            return this;
-        }
-
-        public DomainEventEntityBuilder Version(short version)
-        {
-            this._version = version;
             return this;
         }
     }

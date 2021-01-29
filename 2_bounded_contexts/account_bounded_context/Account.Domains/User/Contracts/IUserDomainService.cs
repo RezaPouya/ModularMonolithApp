@@ -1,4 +1,5 @@
-﻿using Framework.Core.Markers;
+﻿using Framework.Core.Common.Contracts;
+using Framework.Core.Markers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Account.Domains.User.Contracts
 {
-    public interface IUserDomainService : IScopedDependency
+    public interface IUserDomainService : IDomainService
     {
         Task<UserDomain> GetUser(string userId, CancellationToken cancellationToken, bool takeFromLastSnapshot = false);
     }

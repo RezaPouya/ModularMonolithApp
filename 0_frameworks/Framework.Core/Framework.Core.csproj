@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\Abstracts\" />
     <Folder Include="Common\ValidationsMessages\" />
   </ItemGroup>
 

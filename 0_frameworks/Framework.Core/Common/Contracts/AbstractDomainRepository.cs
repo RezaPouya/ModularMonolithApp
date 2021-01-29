@@ -14,31 +14,19 @@ namespace Framework.Core.Common.Contracts
     {
         private readonly DbContext _dbContext;
         protected readonly ICurrentUserInfo _currentUserInfo;
+
         public AbstractDomainRepository(DbContext dbContext, ICurrentUserInfo currentUserInfo)
         {
             _dbContext = dbContext;
             _currentUserInfo = currentUserInfo;
         }
 
-        public async Task<List<DomainEventEntity>> GetAllEvents(string id, CancellationToken cancellationToken)
+        public async Task<List<DomainEventEntity>> GetEvents(string aggregateId, CancellationToken cancellationToken)
         {
             var records = await _dbContext.Set<TEntityEvent>()
-              .Where(p => p.AggregateId.Equals(id))
+              .Where(p => p.AggregateId.Equals(aggregateId))
               .OrderBy(p => p.Id)
               .ToListAsync(cancellationToken).ConfigureAwait(false);
-
-            return records as List<DomainEventEntity>;
-        }
-
-        public async Task<List<DomainEventEntity>> GetAllLastSnapShotEvents(string id, CancellationToken cancellationToken)
-        {
-            var records = await _dbContext.Set<TEntityEvent>()
-               .Where(p =>
-                    p.AggregateId.Equals(id) &&
-                    p.SnapShot == _dbContext.Set<TEntityEvent>().Max(r => r.SnapShot)
-                 )
-               .OrderBy(p => p.Id)
-               .ToListAsync(cancellationToken).ConfigureAwait(false);
 
             return records as List<DomainEventEntity>;
         }
@@ -46,7 +34,6 @@ namespace Framework.Core.Common.Contracts
         public Task<bool> IsExists(string id, CancellationToken cancellationToken)
         {
             return _dbContext.Set<TEntityEvent>().AnyAsync(p => p.AggregateId.Equals(id), cancellationToken);
-            ;
         }
 
         public async Task<int> SaveChangeAsync(TDomain domain, CancellationToken cancellationToken)
@@ -58,24 +45,24 @@ namespace Framework.Core.Common.Contracts
 
             var eventToBeSavedList = new List<TEntityEvent>();
 
-            var serializer = new JsonSerializerHelper();
-
             foreach (var @event in notPersistedEvents)
             {
-                var eventEntity = new DomainEventEntity(@event.AggregateId, @event.Id, @event.SnapShotCount);
-                eventEntity.Set_IsSnapShot(@event.SnapShot);
-                eventEntity.Set_UniqueId(@event.UniqueTypeId);
-                eventEntity.Set_EventData(serializer.Serialize(@event));
-                eventToBeSavedList.Add((TEntityEvent)eventEntity);
-                if(@event.SystemGenerated == false)
-                {
-                    eventEntity.Set_EventData
-                }
+                var eventDbEntity = new DomainEventEntity(@event.AggregateId, @event.Id);
+                eventDbEntity.Set_UniqueId(@event.UniqueTypeId);
+                eventDbEntity.Set_EventData(JsonSerializerHelper.Serialize(@event));
+                eventToBeSavedList.Add((TEntityEvent)eventDbEntity);
+                eventDbEntity.Set_EventData(JsonSerializerHelper.Serialize(@event));
             }
 
             _dbContext.Set<TEntityEvent>().AddRange(eventToBeSavedList);
 
             await _dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+
+            notPersistedEvents.ForEach(p =>
+            {
+                p.SetSavedInPersistenceMedia();
+            });
+
             return eventToBeSavedList.Count();
         }
     }

@@ -9,11 +9,7 @@
         public ushort Version { get; }
         public bool SystemGenerated { get; }
         public bool DeleteEvent { get; }
-        public bool SnapShot { get; }
-        public ushort SnapShotCount { get;  }
-
         public string UserId { get; }
-
         public string Ip { get; }
         public void SetSavedInPersistenceMedia();
     }
