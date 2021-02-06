@@ -1,4 +1,5 @@
-﻿using Framework.Core.Common.Models;
+﻿using Framework.Core.Common.DbModels;
+using Framework.Core.Common.Models;
 using Framework.Core.Helpers;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace Framework.Core.Common.Contracts
 {
     public abstract class AbstractDomainRepository<TDomain, TEntityEvent> : IAbstractDomainRepository<TDomain>
-        where TEntityEvent : DomainEventEntity, new()
+        where TEntityEvent : DomainEventDbEntity, new()
         where TDomain : AggregateRoot
     {
         private readonly DbContext _dbContext;
@@ -21,14 +22,14 @@ namespace Framework.Core.Common.Contracts
             _currentUserInfo = currentUserInfo;
         }
 
-        public async Task<List<DomainEventEntity>> GetEvents(string aggregateId, CancellationToken cancellationToken)
+        public async Task<List<DomainEventDbEntity>> GetEvents(string aggregateId, CancellationToken cancellationToken)
         {
             var records = await _dbContext.Set<TEntityEvent>()
               .Where(p => p.AggregateId.Equals(aggregateId))
               .OrderBy(p => p.Id)
               .ToListAsync(cancellationToken).ConfigureAwait(false);
 
-            return records as List<DomainEventEntity>;
+            return records as List<DomainEventDbEntity>;
         }
 
         public Task<bool> IsExists(string id, CancellationToken cancellationToken)
@@ -47,7 +48,7 @@ namespace Framework.Core.Common.Contracts
 
             foreach (var @event in notPersistedEvents)
             {
-                var eventDbEntity = new DomainEventEntity(@event.AggregateId, @event.Id);
+                var eventDbEntity = new DomainEventDbEntity(@event.AggregateId, @event.Id);
                 eventDbEntity.Set_UniqueId(@event.UniqueTypeId);
                 eventDbEntity.Set_EventData(JsonSerializerHelper.Serialize(@event));
                 eventToBeSavedList.Add((TEntityEvent)eventDbEntity);

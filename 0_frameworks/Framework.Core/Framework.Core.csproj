@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Common\DomainContracts\" />
     <Folder Include="Common\ValidationsMessages\" />
   </ItemGroup>
 

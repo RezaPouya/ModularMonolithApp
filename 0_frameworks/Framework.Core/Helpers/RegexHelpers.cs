@@ -52,9 +52,11 @@ namespace Framework.Core.Helpers
             {
                 email = email.NormalizeEmail();
 
-                return Regex.IsMatch(email,
+                var isMatch = Regex.IsMatch(email,
                     @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
-                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(100));
+
+                return isMatch;
             }
             catch (RegexMatchTimeoutException)
             {

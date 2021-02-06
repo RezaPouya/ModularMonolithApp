@@ -1,8 +1,9 @@
-﻿using Framework.Core.Common.Models;
+﻿using Framework.Core.Common.DbModels;
+using Framework.Core.Common.Models;
 
-namespace Framework.Core.Common.Behaviours
+namespace Framework.Core.Common.Builders
 {
-    public sealed class DomainEventEntityBuilder
+    public sealed class DomainEventDbEntityBuilder
     {
         private string _aggregateId;
         private string _data;
@@ -11,39 +12,39 @@ namespace Framework.Core.Common.Behaviours
         private string _creatorUser;
         private string _ip;
 
-        public DomainEventEntity Build()
+        public DomainEventDbEntity Build()
         {
-            var model = new DomainEventEntity(_aggregateId, _id);
+            var model = new DomainEventDbEntity(_aggregateId, _id);
             model.Set_EventData(_data);
             return model;
         }
 
-        public DomainEventEntityBuilder Id(long id)
+        public DomainEventDbEntityBuilder Id(long id)
         {
             this._id = id;
             return this;
         }
 
-        public DomainEventEntityBuilder AggregateId(string aggregateId)
+        public DomainEventDbEntityBuilder AggregateId(string aggregateId)
         {
             this._aggregateId = aggregateId;
             return this;
         }
 
-        public DomainEventEntityBuilder Set_Creator(string creatorUser, string ip)
+        public DomainEventDbEntityBuilder Set_Creator(string creatorUser, string ip)
         {
             this._creatorUser = creatorUser;
             this._ip = ip;
             return this;
         }
 
-        public DomainEventEntityBuilder EventData(string @event)
+        public DomainEventDbEntityBuilder EventData(string @event)
         {
             this._data = @event;
             return this;
         }
 
-        public DomainEventEntityBuilder DeleteEvent(bool deletedEvent)
+        public DomainEventDbEntityBuilder DeleteEvent(bool deletedEvent)
         {
             this._deleteEvent = deletedEvent;
             return this;

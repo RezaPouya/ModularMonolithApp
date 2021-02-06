@@ -1,9 +1,9 @@
-﻿using Framework.Core.Common.Contracts;
-using Framework.Core.Common.Models;
+﻿using Framework.Core.Common.DbModels;
+using Framework.Core.Markers;
 
 namespace Account.Domains.User.Entities
 {
-    public sealed class UserEntity : AuditableDbEntity, IEntity
+    public sealed class UserEntity : AuditableDbEntity, IDbEntity
     {
         public UserEntity() : base()
         {

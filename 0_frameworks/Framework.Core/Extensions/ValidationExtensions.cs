@@ -22,7 +22,7 @@ namespace Framework.Core.Extensions
             if (model == null)
                 throw new Exception("validation model is empty");
 
-            if (model.IsValid == false)
+            if (model.IsValid == true)
                 return;
 
             throw (TException)Activator.CreateInstance(typeof(TException), model.GetValidationErrorMessages());

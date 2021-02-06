@@ -1,5 +1,7 @@
-﻿using Framework.Core.Common.Models;
+﻿using Framework.Core.Common.DbModels;
+using Framework.Core.Common.Models;
 using Framework.Core.Markers;
+using Framework.Core.Singletons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,7 @@ namespace Framework.Core.Common.Contracts
 {
     public interface IDomainService : IScopedDependency
     {
-        protected List<IDomainEvent> _getDomainEvent(List<DomainEventEntity> domainEventEntityList)
+        protected List<IDomainEvent> _getDomainEvent(List<DomainEventDbEntity> domainEventEntityList)
         {
             List<IDomainEvent> @events = new List<IDomainEvent>();
 

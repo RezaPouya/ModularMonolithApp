@@ -12,5 +12,7 @@ namespace Account.Domains.User.Contracts
     public interface IUserDomainService : IDomainService
     {
         Task<UserDomain> GetUser(string userId, CancellationToken cancellationToken, bool takeFromLastSnapshot = false);
+
+        Task SaveChanges(UserDomain user , CancellationToken cancellationToken);
     }
 }

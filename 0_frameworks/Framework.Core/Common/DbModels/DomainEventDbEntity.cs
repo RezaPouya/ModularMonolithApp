@@ -1,14 +1,15 @@
 ﻿using Framework.Core.Common.Contracts;
+using Framework.Core.Markers;
 
-namespace Framework.Core.Common.Models
+namespace Framework.Core.Common.DbModels
 {
-    public class DomainEventEntity : IEntity
+    public class DomainEventDbEntity : IDbEntity
     {
-        public DomainEventEntity()
+        public DomainEventDbEntity()
         {
         }
 
-        public DomainEventEntity(string aggregateId, long Id) : this()
+        public DomainEventDbEntity(string aggregateId, long Id) : this()
         {
             this.AggregateId = aggregateId;
             this.Id = Id;

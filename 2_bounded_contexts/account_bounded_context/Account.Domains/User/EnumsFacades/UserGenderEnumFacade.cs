@@ -6,9 +6,9 @@ using System;
 
 namespace Account.Domains.User.Enums
 {
-    public sealed record UserGenderEnumDto : IdTitileDto<UserGenderEnum>
+    public sealed record UserGenderEnumFacade : IdTitileDto<UserGenderEnum>
     {
-        public UserGenderEnumDto(UserGenderEnum id)
+        public UserGenderEnumFacade(UserGenderEnum id)
         {
             if (Enum.IsDefined(typeof(UserGenderEnum), id) == false)
             {

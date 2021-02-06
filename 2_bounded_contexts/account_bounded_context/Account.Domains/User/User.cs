@@ -5,7 +5,6 @@ using Framework.Core.Common.Models;
 using Framework.Core.Extensions;
 using Framework.Core.Helpers;
 using System;
-using System.Threading.Tasks;
 
 namespace Account.Domains.User
 {
@@ -17,7 +16,7 @@ namespace Account.Domains.User
             string email) : base(idenity)
         {
             idenity.IsNotNotOrEmpty<UserValidationException>(errorMessage: "Please supply id");
-            UserAccountInfo.IsPasswordValid(userName).Validate<UserAccountValidationException>();
+            UserAccountInfo.IsUserNameValid(userName).Validate<UserAccountValidationException>();
             UserAccountInfo.IsPasswordValid(password).Validate<UserAccountValidationException>();
             UserEmail.IsEmailValid(email.NormalizeEmail()).Validate<UserAccountValidationException>();
 
@@ -33,6 +32,7 @@ namespace Account.Domains.User
         public UserAccountInfo AccountInfo { get; set; }
         public UserPersonalInfo PersonalInfo { get; private set; }
         public UserEmail Email { get; private set; }
+        public UserEmailConfirmation UserEmailConfirmation { get; private set; }
 
         #region behaviour
 
@@ -50,16 +50,6 @@ namespace Account.Domains.User
             Apply(@event);
 
             return true;
-        }
-
-        public override bool SaveChange()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override async Task<bool> SaveChangeAsync()
-        {
-            throw new NotFiniteNumberException();
         }
 
         #endregion behaviour

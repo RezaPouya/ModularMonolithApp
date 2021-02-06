@@ -3,6 +3,7 @@ using Account.Domains.User.Exceptions;
 using Framework.Core.Common.Contracts;
 using Framework.Core.Common.Models;
 using Framework.Core.Helpers;
+using Framework.Core.Markers;
 using System;
 
 namespace Account.Domains.User.ValueObjects
@@ -26,8 +27,8 @@ namespace Account.Domains.User.ValueObjects
         {
             var validation = new ValidationModel();
 
-            if (userName.Length <= 8)
-                validation.AddValidationError("کلمه عبور باید حداقل 8 کاراکتر باشد ");
+            if (userName.Length < 6)
+                validation.AddValidationError("نام کاربری حداقل باید 6 کاراکتر داشته باشد");
 
             return validation;
         }

@@ -1,7 +1,6 @@
 ﻿using Framework.Core.Common.Contracts;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Framework.Core.Common.Models
 {
@@ -44,10 +43,5 @@ namespace Framework.Core.Common.Models
         {
             this._eventQueue.Add(@event);
         }
-
-        public abstract bool SaveChange();
-
-        public abstract Task<bool> SaveChangeAsync();
-
     }
 }

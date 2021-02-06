@@ -1,11 +1,9 @@
+using Account.Domains;
+using Framework.Core.Singletons;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace EndPoints.WebApi
 {
@@ -14,6 +12,8 @@ namespace EndPoints.WebApi
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
+
+            SetSingletons();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -22,5 +22,20 @@ namespace EndPoints.WebApi
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        private static void SetSingletons()
+        {
+            DomainEventInfoSingleton.GetInstance(_getAssemblies());
+        }
+
+        private static List<Assembly> _getAssemblies()
+        {
+            var assemblies = new List<Assembly>()
+            {
+                typeof(IAccount_Domain_Assembly_Marker).Assembly
+            };
+
+            return assemblies;
+        }
     }
 }

@@ -1,12 +1,9 @@
-﻿using Account.Domains;
-using Framework.Core.Common.Models;
+﻿using Account.Domains.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 
 namespace EndPoints.WebApi.Controllers
 {
@@ -29,12 +26,12 @@ namespace EndPoints.WebApi.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            var assemblies = new List<Assembly>()
-            {
-                typeof(IAccount_Domain_Assembly_Marker).Assembly
-            };
+            var userId = UserDomain.GenerateId();
+            var userName = "rpouya";
+            var password = "rpouya_pass";
+            var email = "rpouya@hotmail.com";
 
-            DomainEventInfoSingleton.GetInstance(assemblies); 
+            var user = new UserDomain(userId, userName, password, email);
 
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

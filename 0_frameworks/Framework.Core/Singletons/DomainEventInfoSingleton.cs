@@ -1,12 +1,14 @@
 ﻿using Framework.Core.Common.Behaviours;
 using Framework.Core.Common.Contracts;
+using Framework.Core.Common.DbModels;
+using Framework.Core.Common.Models;
 using Framework.Core.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Framework.Core.Common.Models
+namespace Framework.Core.Singletons
 {
     public class DomainEventInfoSingleton
     {
@@ -36,7 +38,7 @@ namespace Framework.Core.Common.Models
         protected static List<Assembly> _assemblies { get; private set; }
         protected List<DomainEventInfo> _domainEvents { get; private set; }
 
-        public IDomainEvent GetDomainInstance(DomainEventEntity domainEventEntity)
+        public IDomainEvent GetDomainInstance(DomainEventDbEntity domainEventEntity)
         {
             var registredEventModel = _domainEvents.FirstOrDefault(p => p.UniqueTypeId == domainEventEntity.UniqueTypeId);
 
@@ -45,7 +47,7 @@ namespace Framework.Core.Common.Models
 
             var obj = JsonSerializerHelper.DesSerialize(domainEventEntity.Data, registredEventModel.CurrentType);
 
-            return obj as IDomainEvent;
+            return (IDomainEvent)obj;
         }
 
         #endregion behaviour

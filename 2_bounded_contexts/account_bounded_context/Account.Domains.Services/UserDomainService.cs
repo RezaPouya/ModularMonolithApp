@@ -22,5 +22,10 @@ namespace Account.Domains.Services
 
             return new UserDomain(_getDomainEvent(@events));
         }
+
+        public async Task SaveChanges(UserDomain user, CancellationToken cancellationToken)
+        {
+            await _repository.SaveChangeAsync(user, cancellationToken).ConfigureAwait(false);
+        }
     }
 }

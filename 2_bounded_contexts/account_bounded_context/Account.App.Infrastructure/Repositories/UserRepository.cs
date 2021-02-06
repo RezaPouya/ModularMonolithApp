@@ -5,10 +5,9 @@ using Framework.Core.Common.Contracts;
 
 namespace Account.App.Infrastructure.Repositories
 {
-    public class UserRepository : AbstractDomainRepository<UserDomain, UserEventEntity>, IUserRepository
+    public class UserRepository : AbstractDomainRepository<UserDomain, UserEventDbEntity>, IUserRepository
     {
-        public UserRepository(UserAccountDbContext dbContext,
-            ICurrentUserInfo currentUserInfo) : base(dbContext, currentUserInfo)
+        public UserRepository(UserAccountDbContext dbContext, ICurrentUserInfo currentUserInfo) : base(dbContext, currentUserInfo)
         {
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace Framework.Core.Common.Models
+﻿namespace Framework.Core.Common.DbModels
 {
     public abstract class AuditableDbEntity
     {

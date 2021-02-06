@@ -1,4 +1,4 @@
-﻿namespace Framework.Core.Common.Contracts
+﻿namespace Framework.Core.Markers
 {
     public interface IValueObject
     {

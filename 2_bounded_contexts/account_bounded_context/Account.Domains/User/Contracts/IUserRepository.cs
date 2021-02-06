@@ -5,5 +5,6 @@ namespace Account.Domains.User.Repositories
 {
     public interface IUserRepository : IAbstractDomainRepository<UserDomain>
     {
+
     }
 }
