@@ -14,7 +14,6 @@ namespace Framework.Core.Extensions
 
         public static string FindFirstValue(this IIdentity identity, string claimType)
         {
-            var claimsIdentity = identity as ClaimsIdentity;
             return (identity as ClaimsIdentity)?.FindFirstValue(claimType);
         }
 
@@ -26,6 +25,7 @@ namespace Framework.Core.Extensions
         public static T GetUserId<T>(this IIdentity identity) where T : IConvertible
         {
             var userId = identity?.GetUserId();
+
             return userId.HasValue()
                 ? (T)Convert.ChangeType(userId, typeof(T), CultureInfo.InvariantCulture)
                 : default;

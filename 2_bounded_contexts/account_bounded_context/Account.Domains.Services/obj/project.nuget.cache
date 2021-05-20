@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5cFOYZBCJcPwT2qOzOy5t1qBAzDP3xYFmfRoutiOSefxjDjYNwj0UTOuCYXyBkizGbJvlIxokdX3SWnq4ebZDg==",
+  "dgSpecHash": "w5gB0ciPRtE5pcISRJwavos/XIqu1TM/EL8vIMW5xfXfJQxp/+n9lui01yJfP+QbcrSpJCTiD2SrmJxnUu0oTg==",
   "success": true,
   "projectFilePath": "C:\\Projects\\ModularMonolithApp\\2_bounded_contexts\\account_bounded_context\\Account.Domains.Services\\Account.Domains.Services.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\R.Pouya\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.2\\microsoft.entityframeworkcore.5.0.2.nupkg.sha512",
-    "C:\\Users\\R.Pouya\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.2\\microsoft.entityframeworkcore.abstractions.5.0.2.nupkg.sha512",
-    "C:\\Users\\R.Pouya\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.2\\microsoft.entityframeworkcore.analyzers.5.0.2.nupkg.sha512",
+    "C:\\Users\\R.Pouya\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.4\\microsoft.entityframeworkcore.5.0.4.nupkg.sha512",
+    "C:\\Users\\R.Pouya\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.4\\microsoft.entityframeworkcore.abstractions.5.0.4.nupkg.sha512",
+    "C:\\Users\\R.Pouya\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.4\\microsoft.entityframeworkcore.analyzers.5.0.4.nupkg.sha512",
     "C:\\Users\\R.Pouya\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\R.Pouya\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\R.Pouya\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",

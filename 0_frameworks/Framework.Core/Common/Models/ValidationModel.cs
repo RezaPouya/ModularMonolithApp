@@ -25,6 +25,7 @@ namespace Framework.Core.Common.Models
             {
                 msg.AppendLine(initalMessage);
             }
+
             foreach (var errorMessage in this.ErrorsMessages)
             {
                 msg.AppendLine(errorMessage);

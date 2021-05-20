@@ -29,5 +29,8 @@ namespace Framework.Core.Common.DbModels
         {
             this.UniqueTypeId = uniqueTypeId;
         }
+
+        public int SnapshotId { get; set; }
+        public bool IsSnapShotEvent { get; set; }
     }
 }

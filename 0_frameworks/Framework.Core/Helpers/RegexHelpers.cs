@@ -16,6 +16,7 @@ namespace Framework.Core.Helpers
             try
             {
                 email = email.ToLower().Trim();
+
                 // Normalize the domain
                 email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
                                       RegexOptions.None, TimeSpan.FromMilliseconds(200));
@@ -31,6 +32,7 @@ namespace Framework.Core.Helpers
 
                     return match.Groups[1].Value + domainName;
                 }
+
             }
             catch (Exception)
             {

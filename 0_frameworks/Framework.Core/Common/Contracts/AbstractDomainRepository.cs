@@ -27,7 +27,8 @@ namespace Framework.Core.Common.Contracts
             var records = await _dbContext.Set<TEntityEvent>()
               .Where(p => p.AggregateId.Equals(aggregateId))
               .OrderBy(p => p.Id)
-              .ToListAsync(cancellationToken).ConfigureAwait(false);
+              .ToListAsync(cancellationToken)
+              .ConfigureAwait(false);
 
             return records as List<DomainEventDbEntity>;
         }

@@ -15,12 +15,12 @@ namespace Framework.Core.Helpers
             return JsonSerializer.Serialize(obj);
         }
 
-        public static TEntity DesSerialize<TEntity>(string input)
+        public static TEntity DeSerialize<TEntity>(string input)
         {
             return JsonSerializer.Deserialize<TEntity>(input);
         }
 
-        public static object DesSerialize(string input , Type returnType )
+        public static object DeSerialize(string input , Type returnType )
         {
             return JsonSerializer.Deserialize(input, returnType);
         }

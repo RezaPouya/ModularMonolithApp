@@ -2,5 +2,6 @@
 {
     public interface IAssemblyMarker_Framework_Core
     {
+
     }
 }

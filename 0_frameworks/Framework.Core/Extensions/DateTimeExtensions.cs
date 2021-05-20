@@ -33,6 +33,7 @@ namespace Framework.Core.Extensions
                 return DateTime.Now;
 
             var totalDays = (int)Math.Round(age * 365.25, MidpointRounding.AwayFromZero);
+
             if (totalDays <= 365)
                 return DateTime.Now.AddYears(-1);
 
@@ -157,7 +158,9 @@ namespace Framework.Core.Extensions
             var totalAveratgeDiffrentialMonth = endDate.Subtract(startDate).Days / (365.2425 / 12);
 
             var diffYear = Convert.ToInt32(Math.Floor(totalAveratgeDiffrentialMonth / 12));
+
             var diffMonth = Convert.ToInt32(Math.Round(totalAveratgeDiffrentialMonth % 12, MidpointRounding.AwayFromZero));
+
             diffMonth = diffMonth == 12 ? 11 : diffMonth;
 
             var yString = diffYear <= 0 ? "" : $"{diffYear} سال";

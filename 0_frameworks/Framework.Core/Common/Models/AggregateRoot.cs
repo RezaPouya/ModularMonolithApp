@@ -13,15 +13,18 @@ namespace Framework.Core.Common.Models
         }
 
         public List<IDomainEvent> _eventQueue { get; set; }
-        public string Identity { get; protected set; }
-        public ushort SnapShotCounter { get; protected set; }
 
+        public string Identity { get; protected set; }
+        
+        public ushort SnapShotCounter { get; protected set; }
+        
         public void SetSnapShotCounter(ushort snapShotCounter)
         {
             this.SnapShotCounter = snapShotCounter;
         }
 
-        public void IncreaseSnapShotCounter() => this.SnapShotCounter++;
+        public void IncreaseSnapShotCounter() 
+            => this.SnapShotCounter++; 
 
         public void Apply(IDomainEvent @event)
         {

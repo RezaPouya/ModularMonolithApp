@@ -19,4 +19,10 @@
     <ProjectReference Include="..\2_bounded_contexts\account_bounded_context\Account.Domains\Account.Domains.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="bounded_contexts\account\_validations\" />
+    <Folder Include="bounded_contexts\account\v1\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
 </Project>

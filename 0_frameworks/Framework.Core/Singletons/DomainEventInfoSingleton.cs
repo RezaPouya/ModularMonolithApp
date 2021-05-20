@@ -43,9 +43,9 @@ namespace Framework.Core.Singletons
             var registredEventModel = _domainEvents.FirstOrDefault(p => p.UniqueTypeId == domainEventEntity.UniqueTypeId);
 
             if (registredEventModel == null)
-                throw new System.Exception($"There is no Registerd Event with Unique Id of '{domainEventEntity.UniqueTypeId}'");
+                throw new Exception($"There is no Registerd Event with Unique Id of '{domainEventEntity.UniqueTypeId}'");
 
-            var obj = JsonSerializerHelper.DesSerialize(domainEventEntity.Data, registredEventModel.CurrentType);
+            var obj = JsonSerializerHelper.DeSerialize(domainEventEntity.Data, registredEventModel.CurrentType);
 
             return (IDomainEvent)obj;
         }

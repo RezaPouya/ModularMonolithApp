@@ -62,6 +62,7 @@ namespace Framework.Core.AttributesExtensions
 
             if (attrInstance == null)
                 throw new NullReferenceException($"The domain info attribute is not set for '{@enum}'");
+
             return attrInstance;
         }
 

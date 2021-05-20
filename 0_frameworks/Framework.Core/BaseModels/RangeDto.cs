@@ -1,6 +1,6 @@
 ﻿namespace Framework.Core.BaseModels
 {
-    public class RangeFilterDto
+    public record RangeDto
     {
         public int? Min { get; set; }
 

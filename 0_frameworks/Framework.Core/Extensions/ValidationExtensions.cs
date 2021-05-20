@@ -12,11 +12,13 @@ namespace Framework.Core.Extensions
                 throw (TException)Activator.CreateInstance(typeof(TException), errorMessage);
         }
 
+
         public static void IsDateTimeIsFromNowOn<TException>(this DateTimeOffset dateTime, string errorMessage) where TException : AggregateValidationException
         {
             if (dateTime == default || dateTime < DateTimeOffset.UtcNow )
                 throw (TException)Activator.CreateInstance(typeof(TException), errorMessage);
         }
+
         public static void Validate<TException>(this ValidationModel model) where TException : AggregateValidationException
         {
             if (model == null)
